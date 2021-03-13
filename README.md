@@ -81,6 +81,21 @@ Now we are inside ftp server, and we have to use this command to copy id_rsa to 
 
 ![Screenshot_8](https://user-images.githubusercontent.com/80575736/111030943-54f55800-8405-11eb-9bd9-4099600dcf03.png)
 
+8. Lets mount the /var/tmp directory to our machine, to be able to copy id_rsa in our machine. (We )
+
+```sudo mkdir /mnt/kenobiNFS```
+
+````sudo mount <ip>:/var /mnt/kenobiNFS```
+
+
+![Screenshot_9](https://user-images.githubusercontent.com/80575736/111031122-3f346280-8406-11eb-8959-65e2b80a2ffc.png)
+![Screenshot_10](https://user-images.githubusercontent.com/80575736/111031123-4196bc80-8406-11eb-8578-14015cbf7143.png)
+
+We can check the mount with this command:
+
+```ls -la /mnt/kenobiNFS```
+
+![Screenshot_11](https://user-images.githubusercontent.com/80575736/111031169-668b2f80-8406-11eb-88d2-f7811e5ab8d9.png)
 
 
 
