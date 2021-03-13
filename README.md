@@ -2,7 +2,7 @@
 My own Writeup of machine Kenobi (Tryhackme)
 
 ¡¡¡ IMPORTANT !!!
-## First of all, connect to your tryhackme vpn.
+### First of all, connect to your tryhackme vpn.
 ¡¡¡ IMPORTANT !!!
 
 1. Scan the machine, i use this command to scan open ports in the machine:
