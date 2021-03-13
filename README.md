@@ -73,5 +73,13 @@ We execute the previous command, and its show three exploits of service "proftpd
 
 ![Screenshot_7](https://user-images.githubusercontent.com/80575736/111030610-8a00ab00-8403-11eb-9848-c6991de16fb9.png)
 
+Now we are inside ftp server, and we have to use this command to copy id_rsa to before connect via ssh to gain access with the user Kenobi.
+
+```site CPFR /home/kali/.ssh/id_rsa ```
+``` site CPTO /var/tmp/id_rsa```
+
+![Screenshot_8](https://user-images.githubusercontent.com/80575736/111030943-54f55800-8405-11eb-9bd9-4099600dcf03.png)
+
+
 
 
