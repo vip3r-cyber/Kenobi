@@ -85,7 +85,7 @@ Now we are inside ftp server, and we have to use this command to copy id_rsa to 
 
 ```sudo mkdir /mnt/kenobiNFS```
 
-````sudo mount <ip>:/var /mnt/kenobiNFS```
+```sudo mount <ip>:/var /mnt/kenobiNFS```
 
 
 ![Screenshot_9](https://user-images.githubusercontent.com/80575736/111031122-3f346280-8406-11eb-8959-65e2b80a2ffc.png)
