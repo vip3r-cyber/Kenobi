@@ -97,5 +97,29 @@ We can check the mount with this command:
 
 ![Screenshot_11](https://user-images.githubusercontent.com/80575736/111031169-668b2f80-8406-11eb-88d2-f7811e5ab8d9.png)
 
+9. We have to copy id_rsa to our machine, next assign owner read, write permissions to id_rsa, and connect via ssh to victim machine.
+
+```cp /mnt/kenobiNFS/tmp/id_rsa .```
+
+```sudo chmod 600 id_rsa```
+
+```ssh -i id_rsa kenobi@<ip>```
+
+![Screenshot_12](https://user-images.githubusercontent.com/80575736/111031404-c0d8c000-8407-11eb-8b56-2748574d03a5.png)
+
+
+10. To escalate privileges, we have to find SUID binaries, we can use this command to find them.
+
+``` find / -perm /4000 2>/dev/null ```
+
+![Screenshot_19](https://user-images.githubusercontent.com/80575736/111031834-d0590880-8409-11eb-94cb-189f078ca9d1.png)
+
+We can see a strange binary called "menu", with the path /usr/bin/menu, we can run and see what it does.
+With this command ```strings``` can looks for human readable strings on a binary.
+
+![image](https://user-images.githubusercontent.com/80575736/111032041-cbe11f80-840a-11eb-8222-e2183e1e3dd1.png)
+
+
+
 
 
