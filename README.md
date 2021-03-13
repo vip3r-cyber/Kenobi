@@ -53,7 +53,25 @@ When we read file log.txt, we can appreciate:
 5. In our case, port 111 is access to a network file system. Lets use nmap to enumerate this.
 
 ```nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount <ip>```
+
 ![Screenshot_5](https://user-images.githubusercontent.com/80575736/111030205-4e64e180-8401-11eb-85a2-7e27491d9d16.png)
+
+This command provide us folder of file systems mounted by clients. in our case /var 
+
+6. We go to search a exploit of the ftp server of the vulnerable machine "proftpd".
+
+``` searchsploit proftpd 1.3.5```
+
+![Screenshot_6](https://user-images.githubusercontent.com/80575736/111030486-cb448b00-8402-11eb-8d99-e29502e59f14.png)
+
+We execute the previous command, and its show three exploits of service "proftpd"
+
+
+7. Go to connect to ftp server via netcat with this command:
+
+``` nc <ip> <port> ```
+
+![Screenshot_7](https://user-images.githubusercontent.com/80575736/111030610-8a00ab00-8403-11eb-9848-c6991de16fb9.png)
 
 
 
