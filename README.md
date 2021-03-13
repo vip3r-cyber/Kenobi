@@ -35,3 +35,25 @@ This command show the shared folders of the vulnerable machine, and we can watch
 
 To show subfolders and files, we can use command ```ls``` like in linux terminal.
 
+![Screenshot_16](https://user-images.githubusercontent.com/80575736/111029450-ef04d280-83fc-11eb-8ffb-360bad8ad4dd.png)
+
+We see a  intersting file name log.txt
+
+4. Copy the previous file (log.txt) in our machine.
+
+```smbget -R smb://<ip>/shared_folder```
+This command copy all folders and files recursively.
+
+![Screenshot_4](https://user-images.githubusercontent.com/80575736/111029700-55d6bb80-83fe-11eb-90cc-44e8729870bc.png)
+
+When we read file log.txt, we can appreciate:
+- Information generated for Kenobi when generating an SSH key for the user
+- Information about the ProFTPD server.
+
+5. In our case, port 111 is access to a network file system. Lets use nmap to enumerate this.
+
+```nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount <ip>```
+![Screenshot_5](https://user-images.githubusercontent.com/80575736/111030205-4e64e180-8401-11eb-85a2-7e27491d9d16.png)
+
+
+
